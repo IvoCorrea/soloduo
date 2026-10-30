@@ -2,34 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #0F1A20;
-  --foreground: #F8FAFC;
-  --accent-orange: #FA9F42;
-  --accent-blue: #80A1D4;
+/*
+ * Tokens shadcn/ui mapeados para a paleta soloduo:
+ *   #0F1A20 Ink Black     -> 201 36% 9%
+ *   #FA9F42 Sandy Brown   -> 30 95% 62%
+ *   #80A1D4 Wisteria Blue -> 216 49% 67%
+ */
+@layer base {
+  :root {
+    --background: 201 36% 9%;
+    --foreground: 210 40% 98%;
+
+    --card: 202 38% 13%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 202 38% 13%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 30 95% 62%;
+    --primary-foreground: 201 36% 9%;
+
+    --secondary: 216 49% 67%;
+    --secondary-foreground: 201 36% 9%;
+
+    --muted: 202 30% 17%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 202 30% 19%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 202 25% 20%;
+    --input: 202 25% 20%;
+    --ring: 30 95% 62%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
 }
 
-body {
-  background-color: #0F1A20;
-  color: #F8FAFC;
-  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-}
-
-/* Custom Airbnb style scrollbar */
+/* Scrollbar discreta */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
   background: rgba(128, 161, 212, 0.2);
   border-radius: 9999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(128, 161, 212, 0.4);
 }
