@@ -3,15 +3,15 @@
 import { useState } from 'react';
 import { Lock, LockOpen, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { maskRiotId } from '@/types';
 import { cn } from '@/lib/utils';
 
-const DEMO_ID = 'zicaneto#BR1';
+const DEMO_NICK = 'Ivo';
+const DEMO_RIOT_ID = 'zicaneto#BR1';
 
 const points = [
-  'Antes do match, os outros veem só o começo do seu nome, tipo zic----#b--.',
+  'No card aparece só o apelido que você escolher, tipo "Ivo". Não precisa ter nada a ver com o seu nick no jogo.',
   'Ninguém consegue te adicionar ou te procurar no op.gg só pelo card.',
-  'O ID completo e o seu Discord só aparecem quando os dois dão "Bora duo".',
+  'O Riot ID e o seu Discord só aparecem quando os dois dão "Bora duo".',
 ];
 
 export function Privacy() {
@@ -24,7 +24,7 @@ export function Privacy() {
           <div className="space-y-6">
             <p className="text-sm font-bold uppercase tracking-widest text-secondary">Privacidade</p>
             <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
-              Seu nick fica escondido até dar match
+              No card vai o seu apelido. O Riot ID fica guardado até dar match.
             </h2>
             <ul className="space-y-4">
               {points.map((p) => (
@@ -38,25 +38,39 @@ export function Privacy() {
 
           {/* Demonstração interativa */}
           <div className="mx-auto w-full max-w-sm space-y-4 rounded-3xl border border-border bg-background p-6">
-            <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-muted-foreground">
-              <span>{revealed ? 'Depois do match' : 'Antes do match'}</span>
-              {revealed ? (
-                <LockOpen className="h-4 w-4 text-primary" />
-              ) : (
-                <Lock className="h-4 w-4 text-secondary" />
-              )}
+            <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              {revealed ? 'Depois do match' : 'Antes do match'}
             </div>
 
+            {/* Apelido: sempre visível */}
+            <div className="rounded-2xl border border-border bg-card p-5">
+              <span className="text-xs font-semibold text-muted-foreground">Apelido no card</span>
+              <p className="mt-1 text-2xl font-extrabold">{DEMO_NICK}</p>
+            </div>
+
+            {/* Riot ID: só depois do match */}
             <div
               className={cn(
-                'rounded-2xl border p-5 text-center transition-colors duration-300',
-                revealed ? 'border-primary/40 bg-primary/10' : 'border-border bg-card',
+                'flex items-center justify-between rounded-2xl border p-5 transition-colors duration-300',
+                revealed ? 'border-primary/40 bg-primary/10' : 'border-dashed border-border bg-card/50',
               )}
             >
-              <span className="text-xs font-semibold text-muted-foreground">Riot ID</span>
-              <p className="mt-1 text-2xl font-extrabold tracking-wide">
-                {revealed ? DEMO_ID : maskRiotId(DEMO_ID)}
-              </p>
+              <div>
+                <span className="text-xs font-semibold text-muted-foreground">Riot ID</span>
+                <p
+                  className={cn(
+                    'mt-1 text-xl font-extrabold tracking-wide',
+                    !revealed && 'text-muted-foreground',
+                  )}
+                >
+                  {revealed ? DEMO_RIOT_ID : 'Oculto'}
+                </p>
+              </div>
+              {revealed ? (
+                <LockOpen className="h-5 w-5 text-primary" />
+              ) : (
+                <Lock className="h-5 w-5 text-secondary" />
+              )}
             </div>
 
             {revealed ? (
@@ -66,7 +80,7 @@ export function Privacy() {
                 onClick={() => setRevealed(false)}
               >
                 <RotateCcw className="mr-2 h-4 w-4" />
-                Esconder de novo
+                Voltar
               </Button>
             ) : (
               <Button className="w-full rounded-full font-bold" onClick={() => setRevealed(true)}>

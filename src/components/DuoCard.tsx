@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import { DuoProfile, maskRiotId } from '@/types';
-import { ShieldCheck, X, Zap, Volume2, VolumeX } from 'lucide-react';
+import { DuoProfile } from '@/types';
+import { Lock, X, Zap, Volume2, VolumeX } from 'lucide-react';
 
 interface DuoCardProps {
   profile: DuoProfile;
@@ -17,8 +16,6 @@ export const DuoCard: React.FC<DuoCardProps> = ({
   onPass,
   onMatch,
 }) => {
-  const maskedId = maskRiotId(profile.realRiotId);
-
   return (
     <div className="relative w-full max-w-md rounded-[32px] overflow-hidden bg-[#14232C] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300">
       
@@ -35,8 +32,8 @@ export const DuoCard: React.FC<DuoCardProps> = ({
 
         {/* Privacy Pill (Explaining Riot ID Masking) */}
         <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0F1A20]/80 backdrop-blur-md border border-white/10 text-[11px] text-[#80A1D4] font-medium shadow-sm">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>ID Mascarado</span>
+          <Lock className="w-3.5 h-3.5" />
+          <span>Riot ID só no match</span>
         </div>
 
         {/* Skin Name */}
@@ -49,7 +46,7 @@ export const DuoCard: React.FC<DuoCardProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <span className="text-3xl font-black text-white tracking-wide drop-shadow-md">
-                {maskedId}
+                {profile.displayName}
               </span>
               {profile.isOnline && (
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 ring-4 ring-[#14232C]" title="Online" />

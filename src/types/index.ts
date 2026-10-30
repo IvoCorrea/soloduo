@@ -20,7 +20,13 @@ export interface ChampionPick {
 
 export interface DuoProfile {
   id: string;
-  realRiotId: string;       // e.g. "zicaneto#BR1" (only shown on Match)
+  displayName: string;      // Apelido livre exibido no card, ex.: "Ivo"
+  /**
+   * Riot ID real, ex.: "zicaneto#BR1". Nunca aparece no card, só no match.
+   * NOTE: até a Fase 5 ele ainda chega ao navegador nos dados mockados;
+   * depois, o servidor só vai enviá-lo quando existir um match.
+   */
+  realRiotId: string;
   role: Role;
   eloDisplay: string;       // e.g. "Platina III"
   eloTier: EloTier;
@@ -36,16 +42,7 @@ export interface DuoProfile {
 }
 
 /**
- * Masks a Riot ID to protect player privacy prior to mutual match.
- * Example: "zicaneto#BR1" -> "zic----#b--"
- *
- * Uses a fixed number of dashes so the mask doesn't leak the nick length.
- * NOTE: this is display-only. Until Fase 5 the real ID still reaches the client;
- * the server must eventually send only the masked value before a match.
+ * Apelido exibido no card. É escolhido livremente pelo jogador
+ * e não tem relação com o Riot ID (ex.: "Ivo").
  */
-export function maskRiotId(riotId: string): string {
-  const [name, tag] = riotId.split('#');
-  if (!name || !tag) return '???----#---';
-
-  return `${name.slice(0, 3)}----#${tag.slice(0, 1)}--`.toLowerCase();
-}
+export const DISPLAY_NAME_MAX = 16;

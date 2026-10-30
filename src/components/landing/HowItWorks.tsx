@@ -12,7 +12,7 @@ const steps = [
     icon: Palette,
     title: 'Monte seu card',
     description:
-      'Escolha a splash art de qualquer skin, sua rota, seus 3 campeões e a vibe com que você joga.',
+      'Escolha um apelido, a splash art de qualquer skin, sua rota, seus 3 campeões e a sua vibe.',
   },
   {
     icon: Swords,

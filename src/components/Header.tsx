@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({
             EU
           </div>
           <div className="text-left">
-            <p className="text-xs font-bold text-white leading-none">ivo----#b--</p>
+            <p className="text-xs font-bold text-white leading-none">Ivo</p>
             <p className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1 mt-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               {onlineCount} online

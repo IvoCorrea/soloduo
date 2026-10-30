@@ -58,7 +58,7 @@ export function Hero() {
         {/* Pilha de cards de exemplo */}
         <div className="relative mx-auto hidden h-[480px] w-full max-w-lg sm:block">
           <MiniCard
-            riotId="LuluProtec#BR1"
+            displayName="Lu"
             elo="Ouro I"
             eloIcon={ELO_EMBLEMS.GOLD}
             role="SUP"
@@ -68,7 +68,7 @@ export function Hero() {
             style={{ animationDelay: '1.5s' }}
           />
           <MiniCard
-            riotId="JinxRocket#BR1"
+            displayName="Mari"
             elo="Esmeralda IV"
             eloIcon={ELO_EMBLEMS.EMERALD}
             role="ADC"
@@ -79,7 +79,7 @@ export function Hero() {
           />
           <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2">
             <MiniCard
-              riotId="zicaneto#BR1"
+              displayName="Ivo"
               elo="Platina III"
               eloIcon={ELO_EMBLEMS.PLATINUM}
               role="JG"

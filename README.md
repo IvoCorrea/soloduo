@@ -16,9 +16,9 @@ Plataforma de matchmaking para encontrar duos no **League of Legends**, com foco
 
 ## 🔒 Privacidade & Mecânica de Match
 
-1. **Riot ID Mascarado:**
-   * Nenhum perfil exibe o Riot ID completo para desconhecidos antes do match mútuo.
-   * Exibição inicial protegida: ex. `zic----#b--` (para `zicaneto#br1`).
+1. **Apelido no card, Riot ID oculto:**
+   * O card mostra um apelido livre escolhido pelo jogador (ex: `Ivo`), sem relação com o Riot ID.
+   * O Riot ID (ex: `zicaneto#BR1`) nunca aparece no card nem no feed.
 2. **Revelação no Match:**
    * Apenas quando ambos os jogadores clicam em **Bora Duo!**, o Riot ID real é desbloqueado com botão de copiar em 1 clique e atalho para o Discord.
 3. **Sem Favoritos:**

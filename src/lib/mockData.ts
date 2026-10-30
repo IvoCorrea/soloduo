@@ -4,6 +4,7 @@ import { ELO_EMBLEMS, getChampionIconUrl, getSplashArtUrl } from './riot';
 export const INITIAL_PROFILES: DuoProfile[] = [
   {
     id: '1',
+    displayName: 'Ivo',
     realRiotId: 'zicaneto#BR1',
     role: 'JUNGLE',
     eloDisplay: 'Platina III',
@@ -24,6 +25,7 @@ export const INITIAL_PROFILES: DuoProfile[] = [
   },
   {
     id: '2',
+    displayName: 'Sena',
     realRiotId: 'SenaSupport#BR1',
     role: 'SUPPORT',
     eloDisplay: 'Platina I',
@@ -44,6 +46,7 @@ export const INITIAL_PROFILES: DuoProfile[] = [
   },
   {
     id: '3',
+    displayName: 'Mari',
     realRiotId: 'JinxRocket#BR1',
     role: 'ADC',
     eloDisplay: 'Esmeralda IV',
@@ -64,6 +67,7 @@ export const INITIAL_PROFILES: DuoProfile[] = [
   },
   {
     id: '4',
+    displayName: 'Hasagi',
     realRiotId: 'YasuoHasagi#BR1',
     role: 'MID',
     eloDisplay: 'Ouro I',

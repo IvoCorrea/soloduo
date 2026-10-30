@@ -1,8 +1,7 @@
-import { maskRiotId } from '@/types';
 import { cn } from '@/lib/utils';
 
 interface MiniCardProps {
-  riotId: string;
+  displayName: string;
   elo: string;
   eloIcon: string;
   role: string;
@@ -14,7 +13,7 @@ interface MiniCardProps {
 
 /** Versão compacta e estática do card de duo, usada na landing. */
 export function MiniCard({
-  riotId,
+  displayName,
   elo,
   eloIcon,
   role,
@@ -36,8 +35,8 @@ export function MiniCard({
         <img src={splash} alt="" className="h-full w-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
         <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between gap-2">
-          <span className="text-lg font-extrabold text-white drop-shadow">
-            {maskRiotId(riotId)}
+          <span className="text-xl font-extrabold text-white drop-shadow">
+            {displayName}
           </span>
           <span className="rounded-lg bg-white/10 px-1.5 py-0.5 text-xs font-bold text-primary backdrop-blur">
             {role}

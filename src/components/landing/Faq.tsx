@@ -11,8 +11,8 @@ const faqs = [
     a: 'Sim. Dá pra criar o perfil, ver cards e dar match sem pagar nada.',
   },
   {
-    q: 'Por que meu Riot ID aparece escondido?',
-    a: 'Pra ninguém te adicionar ou te procurar sem você querer. O ID completo só aparece para a outra pessoa quando os dois dão match.',
+    q: 'Meu Riot ID aparece no card?',
+    a: 'Não. No card aparece só o apelido que você escolher, tipo "Ivo". O Riot ID fica guardado e só é mostrado para a outra pessoa quando os dois dão match.',
   },
   {
     q: 'Como vocês sabem que a conta é minha?',
