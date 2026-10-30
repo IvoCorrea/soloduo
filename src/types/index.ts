@@ -38,20 +38,14 @@ export interface DuoProfile {
 /**
  * Masks a Riot ID to protect player privacy prior to mutual match.
  * Example: "zicaneto#BR1" -> "zic----#b--"
+ *
+ * Uses a fixed number of dashes so the mask doesn't leak the nick length.
+ * NOTE: this is display-only. Until Fase 5 the real ID still reaches the client;
+ * the server must eventually send only the masked value before a match.
  */
 export function maskRiotId(riotId: string): string {
-  const parts = riotId.split('#');
-  if (parts.length !== 2) return 'player#----';
+  const [name, tag] = riotId.split('#');
+  if (!name || !tag) return '???----#---';
 
-  const [name, tag] = parts;
-  
-  const maskedName = name.length <= 3 
-    ? name + '---'
-    : name.slice(0, 3) + '-'.repeat(Math.max(3, name.length - 3));
-
-  const maskedTag = tag.length <= 1
-    ? tag + '--'
-    : tag.slice(0, 1) + '-'.repeat(Math.max(2, tag.length - 1));
-
-  return `${maskedName}#${maskedTag}`.toLowerCase();
+  return `${name.slice(0, 3)}----#${tag.slice(0, 1)}--`.toLowerCase();
 }

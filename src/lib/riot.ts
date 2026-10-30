@@ -1,16 +1,21 @@
 export const DDRAGON_VERSION = '14.20.1';
 
+const ELO_CREST_BASE =
+  'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-mini-crests';
+
+const crest = (tier: string) => `${ELO_CREST_BASE}/${tier}.svg`;
+
 export const ELO_EMBLEMS: Record<string, string> = {
-  IRON: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/iron.png',
-  BRONZE: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/bronze.png',
-  SILVER: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/silver.png',
-  GOLD: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/gold.png',
-  PLATINUM: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/platinum.png',
-  EMERALD: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/emerald.png',
-  DIAMOND: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/diamond.png',
-  MASTER: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/master.png',
-  GRANDMASTER: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/grandmaster.png',
-  CHALLENGER: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/images/ranked-emblems/challenger.png',
+  IRON: crest('iron'),
+  BRONZE: crest('bronze'),
+  SILVER: crest('silver'),
+  GOLD: crest('gold'),
+  PLATINUM: crest('platinum'),
+  EMERALD: crest('emerald'),
+  DIAMOND: crest('diamond'),
+  MASTER: crest('master'),
+  GRANDMASTER: crest('grandmaster'),
+  CHALLENGER: crest('challenger'),
 };
 
 export const POPULAR_SKINS = [
