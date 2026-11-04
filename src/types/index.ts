@@ -12,37 +12,77 @@ export type EloTier =
   | 'GRANDMASTER'
   | 'CHALLENGER';
 
-export interface ChampionPick {
-  name: string;
-  key: string;
-  iconUrl: string;
-}
-
-export interface DuoProfile {
-  id: string;
-  displayName: string;      // Apelido livre exibido no card, ex.: "Ivo"
-  /**
-   * Riot ID real, ex.: "zicaneto#BR1". Nunca aparece no card, só no match.
-   * NOTE: até a Fase 5 ele ainda chega ao navegador nos dados mockados;
-   * depois, o servidor só vai enviá-lo quando existir um match.
-   */
-  realRiotId: string;
-  role: Role;
-  eloDisplay: string;       // e.g. "Platina III"
-  eloTier: EloTier;
-  eloIconUrl: string;
-  bio: string;              // e.g. "procuro pessoas para jogar e subir de elo, atual platina. chilling"
-  vibes: string[];          // e.g. ["CHILL", "CLIMB", "TRYHARD"]
-  hasMic: boolean;
-  splashArtUrl: string;     // Any skin splash art chosen by player
-  skinName: string;         // e.g. "Viego, o Rei Destruído"
-  championPool: ChampionPick[]; // Top 3 champions
-  discordTag: string;
-  isOnline: boolean;
-}
+export type Division = 'I' | 'II' | 'III' | 'IV';
+export type Server = 'BR1' | 'LAN' | 'LAS' | 'NA1' | 'EUW1';
+export type Intent = 'competitivo' | 'casual' | 'amizade';
+export type TimeSlot = 'manha' | 'tarde' | 'noite' | 'madrugada';
+export type GameMode = 'ranqueada' | 'flex' | 'normal' | 'aram' | 'arena';
+export type CommStyle = 'call' | 'texto' | 'tanto-faz';
 
 /**
- * Apelido exibido no card. É escolhido livremente pelo jogador
- * e não tem relação com o Riot ID (ex.: "Ivo").
+ * 'local' = processada no navegador e nunca enviada (demonstração).
+ * Os demais estados são os do pipeline real de moderação (Fase 2).
  */
-export const DISPLAY_NAME_MAX = 16;
+export type PhotoStatus = 'local' | 'pending' | 'approved' | 'rejected' | 'review_required';
+
+export interface ProfilePhoto {
+  id: string;
+  url: string;
+  /** Imagem usada se `url` falhar (fotos de demonstração ainda não geradas). */
+  fallbackUrl?: string;
+  /** Enquadramento em % (object-position). */
+  focusX: number;
+  focusY: number;
+  status: PhotoStatus;
+}
+
+export interface LolProfile {
+  /** Declarado pelo usuário, nunca verificado. Só aparece depois do match. */
+  riotId: string;
+  server: Server;
+  tier: EloTier;
+  division: Division | null; // null para Mestre+
+  mainRole: Role;
+  secondaryRole: Role | null;
+  champions: string[]; // chaves do Data Dragon, ex.: "LeeSin"
+  modes: GameMode[];
+  mic: boolean;
+  availableNow: boolean;
+}
+
+export interface Profile {
+  id: string;
+  displayName: string;
+  age: number | null; // null quando o usuário esconde a idade
+  pronouns: string;
+  region: string;
+  languages: string[];
+  bio: string;
+  photos: ProfilePhoto[];
+  interests: string[];
+  commStyle: CommStyle;
+  schedule: TimeSlot[];
+  intents: Intent[];
+  lol: LolProfile;
+  discoverable: boolean;
+  discordTag?: string;
+}
+
+/** Perfil do próprio usuário: guarda dados que nunca são exibidos a terceiros. */
+export interface MyProfile extends Profile {
+  email: string;
+  birthDate: string; // yyyy-mm-dd, nunca exibida
+  showAge: boolean;
+}
+
+export interface DemoProfile extends Profile {
+  /** Simula a curtida recíproca até existir backend. */
+  likesYou: boolean;
+}
+
+export interface ChatMessage {
+  id: string;
+  from: 'me' | 'them';
+  text: string;
+  at: number;
+}

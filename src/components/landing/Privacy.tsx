@@ -11,7 +11,7 @@ const DEMO_RIOT_ID = 'zicaneto#BR1';
 const points = [
   'No card aparece só o apelido que você escolher, tipo "Ivo". Não precisa ter nada a ver com o seu nick no jogo.',
   'Ninguém consegue te adicionar ou te procurar no op.gg só pelo card.',
-  'O Riot ID e o seu Discord só aparecem quando os dois dão "Bora duo".',
+  'O Riot ID só aparece quando a curtida é mútua. Sua data de nascimento nunca aparece.',
 ];
 
 export function Privacy() {
