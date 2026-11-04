@@ -19,24 +19,22 @@ export function Hero() {
             className="gap-1.5 rounded-full border-secondary/30 bg-secondary/10 px-3 py-1 text-secondary"
           >
             <ShieldCheck className="h-3.5 w-3.5" />
-            Seu Riot ID só aparece depois do match
+            Feito para jogadores de LoL · 18+
           </Badge>
 
           <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl">
-            Chega de cair com troll na SoloQ.{' '}
-            <span className="text-primary">Encontre seu duo.</span>
+            Encontre seu{' '}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">duo ideal</span> no LoL.
           </h1>
 
           <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
-            Jogadores do seu elo, com rotas que combinam com a sua e a mesma vibe: chill,
-            climb ou tryhard. Deu match, vocês trocam o Riot ID e vão pra fila.
+            Conheça jogadores, faça amizades e encontre companhia para jogar League of Legends.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            {/* TODO (Fase 2): login com Discord */}
             <Button asChild size="lg" className="h-12 rounded-full px-7 text-base font-bold">
-              <Link href="/descobrir">
-                Encontrar meu duo
+              <Link href="/cadastro">
+                Começar grátis
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
@@ -51,7 +49,7 @@ export function Hero() {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            Gratuito · Servidor BR · Só a fila Solo/Duo
+            Grátis para começar · Competitivo, casual e amizades
           </p>
         </div>
 

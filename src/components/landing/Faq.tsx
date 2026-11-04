@@ -7,28 +7,28 @@ import {
 
 const faqs = [
   {
-    q: 'O soloduo é gratuito?',
-    a: 'Sim. Dá pra criar o perfil, ver cards e dar match sem pagar nada.',
+    q: 'O DuoMatch é um app de namoro?',
+    a: 'Não. É uma rede social para jogadores de League of Legends encontrarem duo, companhia para jogar e amizades. Não prometemos nem promovemos relacionamentos amorosos.',
   },
   {
-    q: 'Meu Riot ID aparece no card?',
-    a: 'Não. No card aparece só o apelido que você escolher, tipo "Ivo". O Riot ID fica guardado e só é mostrado para a outra pessoa quando os dois dão match.',
+    q: 'É gratuito?',
+    a: 'Sim. O plano grátis tem perfil completo, até 6 fotos, 20 curtidas por dia, matches e chat ilimitado. O Premium (R$ 4,90/mês, com 3 dias grátis para testar) adiciona curtidas ilimitadas, filtros avançados, ver quem curtiu você e desfazer.',
   },
   {
-    q: 'Como vocês sabem que a conta é minha?',
-    a: 'Na hora do cadastro pedimos para você trocar o ícone de invocador por um ícone específico. Conferimos pela API da Riot e pronto, depois pode voltar pro seu ícone.',
+    q: 'Que fotos posso colocar?',
+    a: 'Fotos suas, selfies, fotos jogando, do seu setup, do seu pet, cosplay ou artes de jogo. Não precisa mostrar o rosto. Nudez, conteúdo sexual, violência gráfica e fotos de outras pessoas sem consentimento são proibidos, e toda foto passa por moderação antes de aparecer.',
   },
   {
-    q: 'Por que não aparece winrate?',
-    a: 'Porque winrate de poucos jogos engana e afasta gente boa. O card mostra só o elo oficial da fila Solo/Duo.',
+    q: 'Meu Riot ID aparece no perfil?',
+    a: 'Não. Ele é opcional e só aparece para quem deu match com você. Nunca pedimos sua senha da Riot.',
   },
   {
-    q: 'E se eu cair com alguém tóxico?',
-    a: 'Você pode bloquear e denunciar. Perfis com muitas denúncias deixam de aparecer no feed.',
+    q: 'Quem pode usar?',
+    a: 'Maiores de 18 anos. Sua data de nascimento nunca aparece; a idade só é mostrada se você quiser.',
   },
   {
-    q: 'Funciona em qual servidor?',
-    a: 'Por enquanto só no servidor brasileiro (BR1).',
+    q: 'E se alguém for inconveniente?',
+    a: 'Você pode desfazer o match, bloquear e denunciar a qualquer momento. Só quem deu match pode te mandar mensagem.',
   },
 ];
 

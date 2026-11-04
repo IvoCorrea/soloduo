@@ -3,40 +3,40 @@
 @tailwind utilities;
 
 /*
- * Tokens shadcn/ui mapeados para a paleta soloduo:
- *   #0F1A20 Ink Black     -> 201 36% 9%
- *   #FA9F42 Sandy Brown   -> 30 95% 62%
- *   #80A1D4 Wisteria Blue -> 216 49% 67%
+ * Tokens shadcn/ui da paleta DuoMatch:
+ *   grafite        -> 240 10% 6%
+ *   vermelho (amor) -> 354 85% 58%  #EF3B4F
+ *   rosa            -> 338 78% 61%  #E9508A
  */
 @layer base {
   :root {
-    --background: 201 36% 9%;
-    --foreground: 210 40% 98%;
+    --background: 240 10% 6%;
+    --foreground: 240 10% 97%;
 
-    --card: 202 38% 13%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 8% 10%;
+    --card-foreground: 240 10% 97%;
 
-    --popover: 202 38% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 8% 10%;
+    --popover-foreground: 240 10% 97%;
 
-    --primary: 30 95% 62%;
-    --primary-foreground: 201 36% 9%;
+    --primary: 354 85% 58%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 216 49% 67%;
-    --secondary-foreground: 201 36% 9%;
+    --secondary: 338 78% 61%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 202 30% 17%;
-    --muted-foreground: 210 15% 65%;
+    --muted: 240 6% 15%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 202 30% 19%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 240 6% 17%;
+    --accent-foreground: 240 10% 97%;
 
-    --destructive: 0 72% 55%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 202 25% 20%;
-    --input: 202 25% 20%;
-    --ring: 30 95% 62%;
+    --border: 240 6% 18%;
+    --input: 240 6% 18%;
+    --ring: 354 85% 58%;
 
     --radius: 1rem;
   }
@@ -67,9 +67,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(128, 161, 212, 0.2);
+  background: rgba(239, 59, 79, 0.25);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(128, 161, 212, 0.4);
+  background: rgba(239, 59, 79, 0.45);
 }

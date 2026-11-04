@@ -15,16 +15,15 @@ export function FinalCta() {
               Seu próximo duo está na fila
             </h2>
             <p className="text-lg font-medium opacity-80">
-              Crie seu card em menos de dois minutos.
+              Crie seu perfil em menos de dois minutos.
             </p>
-            {/* TODO (Fase 2): login com Discord */}
             <Button
               asChild
               size="lg"
               className="h-12 rounded-full bg-brand-dark px-8 text-base font-bold text-white hover:bg-brand-dark/90"
             >
-              <Link href="/descobrir">
-                Encontrar meu duo
+              <Link href="/cadastro">
+                Começar grátis
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
@@ -42,12 +41,15 @@ export function Footer() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <Logo />
           <nav className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-            {/* TODO (Fase 9): criar as páginas de termos e privacidade */}
+            {/* TODO (Fase 2): criar Termos, Privacidade e Regras da Comunidade (revisão jurídica) */}
             <Link href="/termos" className="hover:text-foreground">
               Termos de uso
             </Link>
             <Link href="/privacidade" className="hover:text-foreground">
               Política de privacidade
+            </Link>
+            <Link href="/regras" className="hover:text-foreground">
+              Regras da comunidade
             </Link>
             <a href="#faq" className="hover:text-foreground">
               FAQ
@@ -58,10 +60,10 @@ export function Footer() {
         <Separator className="bg-border/60" />
 
         <div className="space-y-2 text-xs leading-relaxed text-muted-foreground">
-          <p>© {new Date().getFullYear()} soloduo.</p>
+          <p>© {new Date().getFullYear()} DuoMatch. Plataforma para maiores de 18 anos.</p>
           {/* Aviso exigido pelas políticas da Riot Games para projetos de terceiros */}
           <p>
-            soloduo isn&apos;t endorsed by Riot Games and doesn&apos;t reflect the views or
+            DuoMatch isn&apos;t endorsed by Riot Games and doesn&apos;t reflect the views or
             opinions of Riot Games or anyone officially involved in producing or managing Riot
             Games properties. Riot Games, and all associated properties are trademarks or
             registered trademarks of Riot Games, Inc.

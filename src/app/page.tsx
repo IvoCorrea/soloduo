@@ -4,6 +4,7 @@ import { HowItWorks } from '@/components/landing/HowItWorks';
 import { Privacy } from '@/components/landing/Privacy';
 import { Features } from '@/components/landing/Features';
 import { Faq } from '@/components/landing/Faq';
+import { Pricing } from '@/components/landing/Pricing';
 import { FinalCta, Footer } from '@/components/landing/FinalCta';
 
 export default function LandingPage() {
@@ -15,6 +16,7 @@ export default function LandingPage() {
         <HowItWorks />
         <Privacy />
         <Features />
+        <Pricing />
         <Faq />
         <FinalCta />
       </main>

@@ -1,24 +1,24 @@
-import { BadgeCheck, Palette, Swords } from 'lucide-react';
+import { Camera, Heart, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const steps = [
   {
-    icon: BadgeCheck,
-    title: 'Vincule sua conta',
+    icon: Camera,
+    title: 'Monte seu perfil',
     description:
-      'Informe seu Riot ID e confirme que a conta é sua. Puxamos o elo direto da Riot, sem ninguém mentir patente.',
+      'Até 6 fotos, uma bio do seu jeito, elo, rotas, campeões favoritos e os horários em que você joga.',
   },
   {
-    icon: Palette,
-    title: 'Monte seu card',
+    icon: Heart,
+    title: 'Curta quem combina',
     description:
-      'Escolha um apelido, a splash art de qualquer skin, sua rota, seus 3 campeões e a sua vibe.',
+      'Escolha o modo (competitivo, casual ou amizades) e passe pelos perfis. Curta ou passe com um toque ou arrastando.',
   },
   {
-    icon: Swords,
-    title: 'Dê match e jogue',
+    icon: MessageCircle,
+    title: 'Deu match? Conversem',
     description:
-      'Passe ou chame pro duo. Se os dois quiserem, o Riot ID é revelado e é só mandar o convite.',
+      'Quando a curtida é mútua, o chat abre e o Riot ID é liberado. Aí é só chamar pro lobby.',
   },
 ];
 
@@ -29,7 +29,7 @@ export function HowItWorks() {
         <div className="mx-auto max-w-2xl space-y-4 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">Como funciona</p>
           <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
-            Do cadastro à fila em três passos
+            Do cadastro ao lobby em três passos
           </h2>
         </div>
 
